@@ -31,4 +31,10 @@ class IndexServiceTest {
         Assert.isTrue(indexService.save(param).equals("big"),"打的");
     }
 
+    @Test
+    public void testSmall(){
+        int param  = 9;
+        Assert.isTrue(indexService.save(param).equals("small"),"小的");
+    }
+
 }
