@@ -8,6 +8,12 @@ pipeline {
           }
       }
 
+      stage("代码覆盖统计"){
+         steps {
+            jacoco()
+        }
+      }
+
 
     }
 }
