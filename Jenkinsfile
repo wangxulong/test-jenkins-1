@@ -3,12 +3,13 @@ pipeline {
     stages {
 
       stage("质量检查"){
-        steps{
+
           def scannerHome = tool 'sonarScanner';
+          echo scannerHome
            withSonarQubeEnv(credentialsId: 'test-pipeline') {
               sh "${scannerHome}/bin/sonar-scanner"
             }
-        }
+
 
       }
       stage("打包"){
