@@ -13,7 +13,7 @@ pipeline {
       }
       stage("构建代码"){
          steps{
-            echo "build code is ok "
+            sh "chmod +x ${env.WORKSPACE}/build.sh && sudo ${env.WORKSPACE}/builder.sh build"
           }
       }
 
