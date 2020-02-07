@@ -2,7 +2,13 @@ pipeline {
     agent any
     stages {
 
-      stage("构建代码"){
+      stage("质量检查"){
+          def scannerHome = tool 'sonarScanner';
+          withSonarQubeEnv(credentialsId: 'test-pipeline') {
+            sh "${scannerHome}/bin/sonar-scanner"
+          }
+      }
+      stage("打包"){
          steps{
             sh "chmod 777 ${env.WORKSPACE}/build.sh &&  ${env.WORKSPACE}/build.sh package"
           }
