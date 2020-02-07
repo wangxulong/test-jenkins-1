@@ -6,8 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.Assert;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+ import static org.hamcrest.MatcherAssert.assertThat;
+ import static org.hamcrest.Matchers.*;
 /**
  * TODO 简要描述
  *
@@ -17,18 +17,20 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class IndexServiceTest {
+
     @Autowired
     private IndexService indexService;
     @Test
     public void add(){
         int result = 10;
-        Assert.isTrue(indexService.add(5,5)== result,"add fil");
+        assertThat(indexService.add(1,1),equalTo(2));
     }
 
     @Test
     public void testBig(){
         int param  = 10;
-        Assert.isTrue(indexService.save(param).equals("big"),"打的");
+        assertThat(indexService.save(param),equalTo("big"));
+
     }
 
     @Test
