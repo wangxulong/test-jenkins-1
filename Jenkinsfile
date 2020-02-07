@@ -4,7 +4,7 @@ pipeline {
 
       stage("构建代码"){
          steps{
-            sh "sudo ${env.WORKSPACE}/build.sh package"
+            sh "chmod 777 ${env.WORKSPACE}/build.sh &&  ${env.WORKSPACE}/build.sh package"
           }
       }
 
