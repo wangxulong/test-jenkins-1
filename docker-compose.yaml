@@ -2,11 +2,10 @@ version: '3.4'
 
 
 services:
-  nas-cloud:
+  nas_cloud:
     build:
       context: .
       dockerfile: Dockerfile
-      network: host
     entrypoint: ["java",
                  "-Xms512M","-Xmx2048M","-jar",
                  "/app/nas_cloud.jar",
@@ -16,6 +15,7 @@ services:
        TZ: 'Asia/Shanghai'
        server.port: 9001
     ports:
-      - "9001:9001"
-    network_mode: "host"
+      - '9001:9001'
+
+
 
