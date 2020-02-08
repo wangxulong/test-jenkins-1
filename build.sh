@@ -15,7 +15,7 @@ package(){
 
 deploy(){
     echo "开始发布"
-    docker-compose -f  up -d
+    docker-compose up -d
     echo "发布结束"
 }
 
