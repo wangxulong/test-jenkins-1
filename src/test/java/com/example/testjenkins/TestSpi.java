@@ -1,6 +1,7 @@
 package com.example.testjenkins;
 
 import com.example.testjenkins.spi.IRefundSeason;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.ServiceLoader;
@@ -13,7 +14,8 @@ import java.util.ServiceLoader;
  */
 public class TestSpi {
 
-    public static void main(String[] args) {
+    @Test
+    public   void test1() {
         ServiceLoader<IRefundSeason>  loader  = ServiceLoader.load(IRefundSeason.class);
 
         loader.forEach( i ->{

@@ -1,6 +1,7 @@
 package com.example.testjenkins;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,6 +26,8 @@ public class TestPool {
     private TaskExecutor taskExecutor;
    static List<Integer> numbers = new ArrayList();
 
+
+   @Test
     public void testPo(){
 
         CountDownLatch countDownLatch = new CountDownLatch(20);
