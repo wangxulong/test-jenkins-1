@@ -27,7 +27,6 @@ public class TestPool {
    static List<Integer> numbers = new ArrayList();
 
 
-   @Test
     public void testPo(){
 
         CountDownLatch countDownLatch = new CountDownLatch(20);

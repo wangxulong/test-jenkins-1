@@ -14,7 +14,6 @@ import java.util.ServiceLoader;
  */
 public class TestSpi {
 
-    @Test
     public   void test1() {
         ServiceLoader<IRefundSeason>  loader  = ServiceLoader.load(IRefundSeason.class);
 
