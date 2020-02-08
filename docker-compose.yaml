@@ -1,0 +1,20 @@
+version: '3.4'
+
+
+services:
+  nas-cloud:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ["/sbin/tini","--","java",
+                 "-Duser.timezone=GMT+08",
+                 "-Djava.security.egd=file:/dev/./urandom",
+                 "-Xms512M","-Xmx2048M","-jar",
+                 "/app/nas_cloud.jar",
+                 "-Dfile.encoding=UTF-8",
+                 "--spring.profiles.active=prod"]
+    environment:
+       TZ: 'Asia/Shanghai'
+       server.port: 9001
+    network_mode: "host"
+

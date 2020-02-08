@@ -26,6 +26,11 @@ pipeline {
             jacoco()
         }
       }
+        stage("发布"){
+               steps {
+                  sh " ${env.WORKSPACE}/build.sh deploy"
+              }
+            }
 
 
     }
