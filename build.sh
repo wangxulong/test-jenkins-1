@@ -12,11 +12,11 @@ package(){
    echo "打包结束"
 
 }
-
+#发布
 deploy(){
     echo "开始发布"
     docker-compose down
-    docker-compose up -d
+    docker-compose up
     echo "发布结束"
 }
 

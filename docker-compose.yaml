@@ -6,9 +6,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    entrypoint: ["/sbin/tini","--","java",
-                 "-Duser.timezone=GMT+08",
-                 "-Djava.security.egd=file:/dev/./urandom",
+      network: host
+    entrypoint: ["java",
                  "-Xms512M","-Xmx2048M","-jar",
                  "/app/nas_cloud.jar",
                  "-Dfile.encoding=UTF-8",
@@ -16,5 +15,7 @@ services:
     environment:
        TZ: 'Asia/Shanghai'
        server.port: 9001
+    ports:
+      - "9001:9001"
     network_mode: "host"
 
